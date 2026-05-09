@@ -24,7 +24,7 @@
       ];
 
       shellHook = ''
-        export PS1="\[\033[1;34m\](nix-dev) \[\033[1;32m\]\u@\h\[\033[00m\]:\[\033[1;34m\]\w\[\033[00m\]\$ "
+        export PS1="\[\033[1;34m\](nix-dev) \[\033[1;32m\]\u@\h\[\033[00m\] $ "
 
         figlet "Skripsi" | lolcat
         echo -e "\033[1;31mJudul  :\033[0m Deteksi dan Identifikasi Kecurangan Pembagian Rahasia Linear Berbasis Skema Shamir"
