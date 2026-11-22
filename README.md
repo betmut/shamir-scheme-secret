@@ -8,17 +8,10 @@ Which is required for my undergraduate thesis project.
 <details>
 <summary> uv </summary>
 
-Install `uv` first in your system. Inside project's directory, create and activate virtual environment and 
-then install required packages by running:
+Install `uv` first in your system. Inside project's directory, run this command: 
 ```bash
-uv venv                         # initialize .venv directory
-source .venv/bin/activate       # activate the environment
-uv init
-uv add -r requirements.txt
-```
-you can deactivate the project environment by running
-```bash
-deactivate
+uv sync                         # syncing the dependencies
+uv run main.py                  # run main.py script
 ```
 </details>
 
