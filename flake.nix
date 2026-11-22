@@ -2,10 +2,10 @@
   description = "A very basic flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
   };
 
-  outputs = inputs@{ self, nixpkgs, ...}:
+  outputs = { self, nixpkgs, ...}:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
@@ -13,14 +13,15 @@
   {
     devShells.${system}.default = pkgs.mkShell {
       packages = with pkgs; [
-        #for ASCII art
+        # for ASCII art
         figlet
         lolcat
 
-        python313
+	# Python Interpreter
+        python314
 
-        #python packages
-        python313Packages.numpy
+        # python packages
+        python314Packages.numpy
       ];
 
       shellHook = ''
@@ -33,7 +34,7 @@
         echo -e "\033[1;33mProject Status:\033[0m"
         echo "-----------------------------------------------------"
         echo "Python version  : $(python --version)"
-        echo "Packages        : numpy"
+        echo "Packages        : $(python metadata.py)"
         echo "Git Branch      : $(git branch --show-current)"
         echo "Last Commit     : $(git log -1 --format=%s)"
         echo "-----------------------------------------------------"
