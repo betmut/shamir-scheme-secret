@@ -1,4 +1,6 @@
 from importlib.metadata import distributions
 
-for dist in distributions():
-    print(f"{dist.metadata['Name']} {dist.version}")
+print(", ".join(
+    f"{dist.metadata['Name']} {dist.version}"
+    for dist in distributions()
+))
