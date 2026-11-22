@@ -1,5 +1,5 @@
 from random import sample 
-import shamir_secret_sharing as shamir 
+import modules.shamir_secret_sharing as shamir 
 
 def main():
     secret = 62
