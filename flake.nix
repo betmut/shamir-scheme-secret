@@ -22,6 +22,7 @@
 
         # python packages
         python314Packages.numpy
+        python314Packages.uv
       ];
 
       shellHook = ''

@@ -1,5 +1,7 @@
 from random import sample, randint 
 
+# create galois field order p (a field with a set {0,1,2,3,...,p-1} 
+# under mod p operation)
 PRIME = 71
 
 # define k-1 degree Polynomial
