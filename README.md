@@ -4,11 +4,32 @@ Which is required for my undergraduate thesis project.
 ## How it works
 
 ## How to test this project
-You must install [Nix package manager](https://nixos.org/download/) to able to test this project. And then run this command below
+
+<details>
+<summary> venv </summary>
+
+Inside project's directory, create and activate virtual environment and then install required packages by running:
+```bash
+python -m venv .venv                #if it doesn't exist
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+you can deactivate the project environment by running
+```bash
+deactivate
+```
+</details>
+
+<details>
+<summary> nix </summary>
+
+Install [Nix package manager](https://nixos.org/download/) to able to test this project. And then run this command below
 ```bash
 nix develop -c $SHELL
 ```
-You can run the Shamir's secret sharing scheme implementation running `main.py` file
+</details>
+
+Run the implementation by
 ```bash
 python main.py
 ```
