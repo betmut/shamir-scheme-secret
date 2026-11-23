@@ -2,17 +2,23 @@ from random import sample
 import modules.shamir_secret_sharing as shamir 
 
 def main():
-    secret = 62
-    n = 20
+    secret = 63
+    n = 30
     threshold = 4
 
     polynomial = shamir.create_polynomial(secret, threshold)
-    shares = shamir.create_shares(n, polynomial)
-    pick_random_shares = sample(shares, k = 5)
+    point_of_shares = shamir.create_shares(n, polynomial)
+    picked_point_of_shares = sample(point_of_shares, k = 5)
+    picked_points, picked_shares = zip(*picked_point_of_shares)
 
-    print(polynomial)
-    print(shares)
-    print(pick_random_shares)
+    # interpolation
+    recovered_secret = shamir.lagrange_interpolation(0, picked_points, picked_shares)
+
+    # display the result
+    print(f"Polynomial: {polynomial}")
+    print(f"Point of shares: {point_of_shares}")
+    print(f"Picked point of shares: {picked_point_of_shares}")
+    print(f"Secret after interpolation: {recovered_secret}")
 
 if __name__ == "__main__":
     main()

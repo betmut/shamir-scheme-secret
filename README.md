@@ -3,7 +3,7 @@ Which is required for my undergraduate thesis project.
 
 ## How it works
 
-## How to test this project
+## How to setup this project
 
 <details>
 <summary> uv </summary>
@@ -28,3 +28,7 @@ Run the implementation by
 ```bash
 python main.py
 ```
+
+## Thanks to
+- Shamir secret scheme's implementation in [wikipedia](https://en.wikipedia.org/wiki/Shamir%27s_secret_sharing) for inspiring me 
+  to write the implementation
