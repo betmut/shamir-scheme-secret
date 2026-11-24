@@ -21,14 +21,13 @@
         python314
 
         # python packages
-        python314Packages.numpy
         python314Packages.uv
       ];
 
       shellHook = ''
         export PS1="\[\033[1;34m\](nix-dev) \[\033[1;32m\]\u@\h\[\033[00m\] $ "
 
-        figlet "Skripsi" | lolcat
+        figlet "Shamir" | lolcat
         echo -e "\033[1;31mJudul  :\033[0m Deteksi dan Identifikasi Kecurangan Pembagian Rahasia Linear Berbasis Skema Shamir"
         echo -e "\033[1;31mAuthor :\033[0m Mathew Elhans"
         echo " "

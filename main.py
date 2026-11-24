@@ -3,12 +3,17 @@ import modules.shamir_secret_sharing as shamir
 
 def main():
     secret = 63
-    n = 30
-    threshold = 4
+    n = 23
+    threshold = 5
 
+    # Create Polynomial
     polynomial = shamir.create_polynomial(secret, threshold)
+
+    # Create n shares
     point_of_shares = shamir.create_shares(n, polynomial)
-    picked_point_of_shares = sample(point_of_shares, k = 5)
+
+    # Pick sample of share points 
+    picked_point_of_shares = sample(point_of_shares, k = 10)
     picked_points, picked_shares = zip(*picked_point_of_shares)
 
     # interpolation
