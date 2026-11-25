@@ -22,6 +22,7 @@
 
         # python packages
         python314Packages.uv
+	python314Packages.pytest
       ];
 
       shellHook = ''
