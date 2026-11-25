@@ -24,11 +24,6 @@ nix develop -c $SHELL
 ```
 </details>
 
-Run the implementation by
-```bash
-python main.py
-```
-
 ## Thanks to
 - Shamir secret scheme's implementation in [wikipedia](https://en.wikipedia.org/wiki/Shamir%27s_secret_sharing) for inspiring me 
   to write the implementation

@@ -23,6 +23,7 @@
         # python packages
         python314Packages.uv
 	python314Packages.pytest
+	python314Packages.seaborn
       ];
 
       shellHook = ''
