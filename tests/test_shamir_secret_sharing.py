@@ -4,23 +4,23 @@ from random import sample
 
 #check degree of polynomial
 @pytest.mark.parametrize(
-        "secret, threshold, expected_number_of_coefficients",
+        "secret, threshold",
         [
-            (63, 10, 10),
-            (63, 10, 10),
-            (123, 15, 15)
+            (63, 10),
+            (63, 10),
+            (123, 15)
         ]
 )
-def test_polynomial_coefficients(secret, threshold, expected_number_of_coefficients):
-    assert len(shamir.create_polynomial(secret, threshold)) == expected_number_of_coefficients
+def test_polynomial_coefficients(secret, threshold):
+    assert len(shamir.create_polynomial(secret, threshold)) == threshold
 
 
 @pytest.mark.parametrize(
         "secret, n, threshold, picked_shares",
         [
-            (63, 50, 10, 12),
-            (63, 70, 7, 8),
-            (123, 75, 7, 10)
+            (63, 50, 10, 15),
+            (63, 70, 20, 25),
+            (123, 75, 30, 40)
         ]
 )
 def test_secret_recovery(secret, n, threshold, picked_shares):
@@ -37,5 +37,3 @@ def test_secret_recovery(secret, n, threshold, picked_shares):
     # interpolation
     recovered_secret = shamir.lagrange_interpolation(0, picked_points, picked_shares)
     assert recovered_secret == secret
-
-
